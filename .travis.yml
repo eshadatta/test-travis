@@ -6,8 +6,8 @@ addons:
 branches:
   only:
     - staging
-    
-script: run.sh
+
+script: ./run.sh
 
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_67893bd5f42b_key -iv $encrypted_67893bd5f42b_iv
