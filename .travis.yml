@@ -1,7 +1,7 @@
 language: ruby
 
 addons:
-  ssh_knowns_hosts: 95.216.174.30
+  ssh_known_hosts: 95.216.174.30
 
 script:
   ruby t.rb
