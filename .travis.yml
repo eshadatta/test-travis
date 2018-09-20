@@ -3,6 +3,12 @@ language: ruby
 addons:
   ssh_known_hosts: 95.216.174.30
 
+branches:
+  only:
+    - staging
+    
+script: run.sh
+
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_67893bd5f42b_key -iv $encrypted_67893bd5f42b_iv
   -in deploy_rsa.enc -out /tmp/deploy_rsa -d
@@ -12,6 +18,6 @@ before_deploy:
 
 deploy:
   skip_cleanup: true
-  provider: run.sh
+  provider: script
   on:
     branch: staging
